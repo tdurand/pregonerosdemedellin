@@ -1,7 +1,6 @@
 
 main.js
 ----------------
-libs/vendor/jquery-2.0.3.min.js
 libs/vendor/lodash-2.2.1.min.js
 libs/vendor/backbone-1.1.0.min.js
 libs/vendor/fastclick.min.js

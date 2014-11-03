@@ -34,6 +34,10 @@
     //or require.config({}) call found in that file will be used.
     mainConfigFile: 'app/main.js',
 
+    paths: {
+        "jquery": "empty:"
+    },
+
     //The directory path to save the output. If not specified, then
     //the path will default to be a directory called "build" as a sibling
     //to the build file. All relative paths are relative to the build file.
@@ -74,7 +78,7 @@
     },
 
 
-    modules: [ 
+    modules: [
         {
             name:"main"
         }
