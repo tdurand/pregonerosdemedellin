@@ -23,4 +23,5 @@ text!templates/streetwalk/streetWalkViewTemplate.html
 libs/vendor/popcorn-1.5.6.min.js
 views/streetwalk.js
 routers/router.js
+libs/vendor/rAF.js
 main.js

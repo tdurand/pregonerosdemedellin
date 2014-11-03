@@ -185,7 +185,9 @@
         text-decoration: none;
         padding: 0.6rem;
 
+        box-shadow: 7px 7px 5px 0px rgba(0,0,0,0.75);
          -webkit-box-shadow: 7px 7px 5px 0px rgba(0,0,0,0.75);
+         -moz-box-shadow: 7px 7px 5px 0px rgba(0,0,0,0.75);
 
     }
 
@@ -304,11 +306,15 @@
     height: 100%;
     position: fixed;
     width: 100%;
+    transition: opacity 0.5s ease;
     -webkit-transition: opacity 0.5s ease;
+    -moz-transition: opacity 0.5s ease;
     opacity: 1;
 }
 
 body.not-moving .trame-video {
     opacity: 0;
+    transition: opacity 0.5s ease;
     -webkit-transition: opacity 0.5s ease;
+    -moz-transition: opacity 0.5s ease;
 }
