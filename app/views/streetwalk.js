@@ -249,8 +249,6 @@ function($, _, Backbone,
             //Change image
             var availableHeigth = (self.bodyHeight - window.innerHeight);
 
-            LOGGER.debug("availableHeigth : " + availableHeigth);
-
             var imgNb = Math.floor( self.currentPosition / availableHeigth * self.way.wayStills.length);
 
             //Do not render same img (we can have changed position a bit but do not have image for this position)
@@ -262,6 +260,11 @@ function($, _, Backbone,
                 //Make sure imgNb is in bounds (on chrome macosx we can scroll more than height (rebound))
                 if(imgNb < 0) { imgNb = 0; }
                 if(imgNb >= self.way.wayStills.length) { imgNb = self.way.wayStills.length-1; }
+
+                if(imgNb == self.way.wayStills.length -1) {
+                    //send event to GA, scrolltoend reached
+                    ga('send', 'event', 'scrolltoend', 'yes');
+                }
 
                 //Render image
                 self.renderImg(imgNb);
