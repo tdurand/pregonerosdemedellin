@@ -1,0 +1,67 @@
+<img id="streetwalkImg" class="streetwalkImg" src="<%= pathFirstStill %>" >
+<div class="trame-video"></div>
+
+<div class="streetwalk-title">
+    <img class="logo" src="images/logo.png" alt="">
+    <div class="description">
+        <h2><%= STR.teaserDescriptionHeadline %></h2>
+        <p><%= STR.teaserDescriptionParagraph %></p>
+    </div>
+    
+    <div class="scrolltostart">
+        
+    </div>
+</div>
+
+<div class="launching">
+    <div class="launching-content">
+        <img class="launchinglogo" src="images/launchinglogo_<%= lang %>.svg" alt="">
+        
+        <div class="launching-signup">
+            <form action="<%= STR.teaserFormSubscribeAction %>" method="post" id="signup-mailchimp-form" name="mc-embedded-subscribe-form" class="validate" novalidate>
+                <div class="launching-emailgroup">
+                    <h2 class="launching-emailinput-label"><%= STR.teaserEmailLabelRegisterMailChimp %></h2>
+                    <input type="email" value="" name="EMAIL" class="required email launching-emailinput" id="mce-EMAIL" placeholder="<%= STR.teaserEmailPlaceholderRegisterMailChimp %>" required>
+                    <h2 class="launching-emailinput-label launching-unlocklabel"><%= STR.teaserBonusTeaser %></h2>
+                </div>
+                <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+                <div style="position: absolute; left: -5000px;"><input type="text" name="<%= STR.teaserFormSubscribeHiddenId %>" tabindex="-1" value=""></div>
+                <div class="clear">
+                    <input type="submit" value="<%= STR.teaserButtonRegisterMailChimp %>" name="subscribe" id="mc-embedded-subscribe" class="button launching-button launching-button-subscribe">
+                </div>
+            </form>
+            
+        </div>
+        
+        <div class="launching-signup-thanks">
+            <h2><%= STR.teaserSignupThanks %></h2>
+            <div class="launching-bonusvideo">
+            </div>
+        </div>
+        
+        <svg class="launching-separatorline" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+             viewBox="0 0 616.7 8.1" style="enable-background:new 0 0 616.7 8.1;" xml:space="preserve">
+            <g>
+                <g>
+                    <path class="launching-separatorline" d="M2.4,7.5c132.1,2.1,264.1-1.3,396.2-2.3C470.5,4.7,542.4,5,614.3,7.3c3.2,0.1,3.2-4.9,0-5
+                        c-132-4.3-264.1-1.6-396.1,0C146.2,3.1,74.3,3.6,2.4,2.5C-0.8,2.4-0.8,7.4,2.4,7.5L2.4,7.5z"/>
+                </g>
+        </svg>
+        
+        <div class="launchingfacebook">
+            <h2><%= STR.teaserFollowOnFacebook %></h2>
+            <a href="https://www.facebook.com/pregonerosdemedellin"><img class="launching-facebookicon" src="images/facebookicon.png"></a>
+        </div>
+        <a class="launching-button launching-button-share" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://www.pregonerosdemedellin.com">
+            <%= STR.teaserButtonShareThisExperience %></a>
+        
+        
+</div>
+
+<!--End mc_embed_signup-->
+</div>
+
+<div id="streetwalk-control" class="streetwalk-control">
+    <div class="toggle-sounds" data-state="normal"></div>
+    <img src="images/mutesound.svg" style="display:none" alt="" />
+</div>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Pregoneros de Medellín</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+        <meta name="description" lang="en" content="The interactive web documentary of the singing street vendors of Medellín (Colombia). A virtual journey to discover the world of those who have understood that in trade as in love, it is the voice that seduces." />
+        <meta name="description" lang="es" content="La web interactiva de los que venden cantando en Medellín - Colombia. Un recorrido virtual por el universo laboral y personal de aquellos que entendieron que al amor y a los clientes se les seduce por el oído." />
+        <meta name="description" lang="fr" content="Le webdocumentaire interactif des crieurs ambulants colombiens. Parcourez virtuellement Medellín et découvrez l’univers de ceux qui on compris, qu’en amour comme en commerce, c’est par la voix qu’on séduit." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="http://www.pregonerosdemedellin.com" />
+        <meta property="og:title" content="Pregoneros de Medellín"/>
+        <meta property="og:image" content="http://www.pregonerosdemedellin.com/seo/screenshot_es.jpg" lang="es" />
+        <meta property="og:image" content="http://www.pregonerosdemedellin.com/seo/screenshot_en.jpg" lang="en" />
+        <meta property="og:image" content="http://www.pregonerosdemedellin.com/seo/screenshot_fr.jpg" lang="fr"/>
+        <meta property="og:locale" content="en" />
+        <meta property="og:locale:alternate" content="fr" />
+        <meta property="og:locale:alternate" content="es" />
+    <script>
+        function loadCSS( href, before, media ){
+        "use strict";
+        // Arguments explained:
+        // `href` is the URL for your CSS file.
+        // `before` optionally defines the element we'll use as a reference for injecting our <link>
+        // By default, `before` uses the first <script> element in the page.
+        // However, since the order in which stylesheets are referenced matters, you might need a more specific location in your document.
+        // If so, pass a different reference element to the `before` argument and it'll insert before that instead
+        // note: `insertBefore` is used instead of `appendChild`, for safety re: http://www.paulirish.com/2011/surefire-dom-element-insertion/
+        var ss = window.document.createElement( "link" );
+        var ref = before || window.document.getElementsByTagName( "script" )[ 0 ];
+        var sheets = window.document.styleSheets;
+        ss.rel = "stylesheet";
+        ss.href = href;
+        // temporarily, set media to something non-matching to ensure it'll fetch without blocking render
+        ss.media = "only x";
+        // inject link
+        ref.parentNode.insertBefore( ss, ref );
+        // This function sets the link's media back to `all` so that the stylesheet applies once it loads
+        // It is designed to poll until document.styleSheets includes the new sheet.
+        function toggleMedia(){
+            var defined;
+            for( var i = 0; i < sheets.length; i++ ){
+                if( sheets[ i ].href && sheets[ i ].href.indexOf( href ) > -1 ){
+                    defined = true;
+                }
+            }
+            if( defined ){
+                ss.media = media || "all";
+            }
+            else {
+                setTimeout( toggleMedia );
+            }
+        }
+        toggleMedia();
+        return ss;
+    }
+    loadCSS( "style/css/main.css" );
+    </script>
+    <noscript><link rel="stylesheet" href="style/css/main.css" /></noscript>
+    <script data-main="app-build/main" src="app-build/libs/vendor/require-2.1.9.min.js"></script>
+    <!-- <script data-main="app/main" src="app/libs/vendor/require-2.1.9.min.js"></script> -->
+    <style type="text/css">
+    * {
+        -webkit-user-select: none;
+        -webkit-tap-highlight-color: rgba(0,0,0,0);
+        -webkit-touch-callout: none;
+        -webkit-box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+
+    .streetwalkImg {
+        width:100%;
+        height: 100%;
+    }
+    </style>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-56280633-1', 'auto');
+      ga('send', 'pageview');
+
+    </script>
+    </head>
+<body class="not-moving">
+    
+    <div id="streetwalk" class="page" style="display:block">
+        <img id="streetwalkImg" class="streetwalkImg" src="data/casapare/highres/way00.jpg" >
+    </div>
+
+</body>
+
+
+
+</html>

@@ -1,0 +1,298 @@
+// Screen
+// ======
+
+@import "grids";
+
+html,body {
+    @include container;
+    height: 100%;
+}
+
+.page {
+    @include container;
+    height: 100%;
+    display: none;
+}
+
+.main {
+    @include span(12);
+
+    background-image: url("../images/texture_full_hq.jpg");
+    background-size:cover;
+
+    height: 70%;
+
+    position: relative;
+}
+
+.top {
+     @include span(12);
+
+     height:30%;
+
+     position: relative;
+
+     .wrap-top-bar {
+        position:absolute;
+        height: 80%;
+        top:20%;
+
+        @include span(12);
+
+        background-color: #bd750f;
+        opacity: 0.6;
+
+        .top-bar {
+            position:absolute;
+            height: 60%;
+            top:20%;
+
+            @include span(12);
+
+            background-color: #8d3e00;
+            opacity: 1;
+        }
+
+     }  
+}
+
+.middle {
+    @include span(12);
+
+    height:70%;
+    position:relative;
+
+    .logo {
+        @include span(isolate 4 at 2);
+
+        height: 100%;
+
+        background-image: url("../images/logo.png");
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+
+    .description {
+        @include span(isolate 8 at 5);
+
+        height: 120%;
+
+        position: absolute;
+        bottom:0;
+
+        border-style: solid;
+        border-width: 111px 214px 51px 297px;
+        -webkit-border-image: url("../images/texture_description_area.png") 111 214 51 297 fill stretch;
+        -moz-border-image: url("../images/texture_description_area.png") 111 214 51 297 fill stretch;
+        border-image: url("../images/texture_description_area.png") 111 214 51 297 fill stretch;
+
+        .description-title {
+
+            width: 50%;
+            height: 30%;
+            margin: 0 auto;
+
+            background-image: url("../images/title_description.png");
+            background-size: contain;
+            background-repeat:no-repeat;
+        }
+
+        .description-text {
+           
+           margin-top:1rem;
+           font-family : absender;
+           font-size : 1.5rem;
+           text-align: justify;
+           color : #FFFFFF;
+        }
+
+        .description-btnenter {
+            // font-family: "ABOVEA DEMO VERSION";
+            // color:#F5CB48;
+            // font-size:4rem;
+            // -webkit-text-stroke-width: 1rem;
+            // -webkit-text-stroke-color: #a6360e;
+        }
+
+    }
+
+    .separator {
+        @include span(12);
+        position: absolute;
+        bottom:-12.5%;
+        z-index: 20;
+
+        height: 25%;
+
+        background-image: url("../images/separator_bottom.png");
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+}
+
+
+.landingpage-video-frame {
+    height: 100%;
+    width: 100%;
+    z-index:-1;
+
+    background-image: url(../images/landing-video-firstframe.jpg); 
+    background-size:cover;
+
+    position:absolute;
+    bottom:0;
+    top:0;
+    right:0;
+}
+
+.landingpage-video {
+    height: 0;
+    width: 100%;
+
+    position:absolute;
+    bottom:0;
+    right:0;
+
+    z-index:-1;
+
+    .iframe {
+        width: 100%;
+    }
+}
+
+
+//STREETVIEW
+//
+#streetwalk {
+    //height: 10000px;
+    //set after loading
+    height: 100%;
+}
+
+.streetwalk-map {
+    width: 200px;
+    height: 200px;
+    position: fixed;
+    top:20px;
+    right:20px;
+}
+
+.streetwalk-control {
+    position: fixed;
+    bottom:20px;
+    right:20px;
+}
+
+.streetwalk-title {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    /*transform*/
+    -webkit-transform:translate(-50%, -50%);
+       -moz-transform:translate(-50%, -50%);
+        -ms-transform:translate(-50%, -50%);
+         -o-transform:translate(-50%, -50%);
+            transform:translate(-50%, -50%);
+
+    h1 {
+        color:white;
+        font-size:4rem;
+        font-weight:bold;
+    }
+
+    .arrow-down {
+        color:white;
+        font-size:4rem;
+        text-align: center;
+    }
+}
+
+.loadingNextWay {
+
+    h1 {
+        color:white;
+        font-size:4rem;
+        font-weight:bold;
+
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        /*transform*/
+        -webkit-transform:translate(-50%, -50%);
+           -moz-transform:translate(-50%, -50%);
+            -ms-transform:translate(-50%, -50%);
+             -o-transform:translate(-50%, -50%);
+                transform:translate(-50%, -50%);
+    }
+}
+
+.streetwalkImg,.element-fixed,.blurImg {
+    position: fixed;
+    top:0;
+    bottom:0;
+    right:0;
+    left:0;
+    width:100%;
+    height:100%;
+}
+
+
+.element-fixed {
+    display:none;
+}
+
+.arrow {
+    width: 200px;
+    fill:white;
+}
+
+.chooseWayContent {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    /*transform*/
+    -webkit-transform:translate(-50%, -50%);
+       -moz-transform:translate(-50%, -50%);
+        -ms-transform:translate(-50%, -50%);
+         -o-transform:translate(-50%, -50%);
+            transform:translate(-50%, -50%);
+}
+
+.trame-video {
+    background: url("../images/trame-video.png") repeat;
+    height: 100%;
+    position: fixed;
+    width: 100%;
+    -webkit-transition: opacity 0.5s ease;
+    opacity: 1;
+}
+
+body.not-moving .trame-video {
+    opacity: 0;
+    -webkit-transition: opacity 0.5s ease;
+}
+
+.svg-explanation {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+
+
+//////// LOADING PAGE 
+
+.streetwalk-loading {
+    width: 100%;
+    height: 100%;
+    background-image: url("../images/loadingbackground.jpg");
+    background-size:cover
+}
+
+.streetwalk-loading-text {
+    position: absolute;
+    width: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
