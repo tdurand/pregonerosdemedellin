@@ -166,6 +166,10 @@
         text-align: center;
     }
 
+    .launching-errorsignup {
+        color:red;
+    }
+
     .launching-button {
         cursor:pointer;
         border-radius : 1.5rem;
@@ -198,6 +202,12 @@
             background : #E2A63B;
             
          }
+
+         &[disabled="disabled"] {
+            color : #005650;
+            background : #E2A63B;
+         }
+
     }
 
     .launching-button-share {

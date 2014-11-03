@@ -318,6 +318,11 @@ function($, _, Backbone,
 
         e.preventDefault();
 
+        self.$el.find('.launching-button-subscribe').attr('disabled','disabled');
+        var label = self.$el.find('.launching-button-subscribe').val();
+        self.$el.find('.launching-button-subscribe').val(label+" ...");
+        self.$el.find('.launching-errorsignup').html("");
+
         $.ajax({
             url: self.$el.find('#signup-mailchimp-form').attr("action"),
             type: 'POST',
@@ -325,9 +330,12 @@ function($, _, Backbone,
             dataType: 'json',
             contentType: "application/json; charset=utf-8",
             success: function (data) {
+               self.$el.find('.launching-button-subscribe').removeAttr("disabled");
+               self.$el.find('.launching-button-subscribe').val(label);
                if (data['result'] != "success") {
                     //ERROR
                     LOGGER.debug(data['msg']);
+                    self.$el.find('.launching-errorsignup').html(data['msg']);
                } else {
                     //SUCCESS - Do what you like here
                     //redirect to teaser video

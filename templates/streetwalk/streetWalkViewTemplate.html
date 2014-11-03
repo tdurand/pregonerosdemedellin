@@ -18,11 +18,12 @@
         <img class="launchinglogo" src="images/launchinglogo_<%= lang %>.svg" alt="">
         
         <div class="launching-signup">
-            <form action="<%= STR.teaserFormSubscribeAction %>" method="post" id="signup-mailchimp-form" name="mc-embedded-subscribe-form" class="validate" novalidate>
+            <form action="<%= STR.teaserFormSubscribeAction %>" method="post" id="signup-mailchimp-form" name="mc-embedded-subscribe-form" class="validate">
                 <div class="launching-emailgroup">
                     <h2 class="launching-emailinput-label"><%= STR.teaserEmailLabelRegisterMailChimp %></h2>
                     <input type="email" value="" name="EMAIL" class="required email launching-emailinput" id="mce-EMAIL" placeholder="<%= STR.teaserEmailPlaceholderRegisterMailChimp %>" required>
                     <h2 class="launching-emailinput-label launching-unlocklabel"><%= STR.teaserBonusTeaser %></h2>
+                    <h2 class="launching-emailinput-label launching-errorsignup"></h2>
                 </div>
                 <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
                 <div style="position: absolute; left: -5000px;"><input type="text" name="<%= STR.teaserFormSubscribeHiddenId %>" tabindex="-1" value=""></div>
