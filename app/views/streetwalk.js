@@ -356,8 +356,9 @@ function($, _, Backbone,
     buttonShare: function(e) {
         e.preventDefault();
         FB.ui({
-          method: 'share',
-          href: 'http://www.pregonerosdemedellin.com/#'+Localization.translationLoaded
+          method: 'feed',
+          name: 'Your title',
+          link: 'http://www.pregonerosdemedellin.com/#'+Localization.translationLoaded
         }, function(response){});
     },
 
