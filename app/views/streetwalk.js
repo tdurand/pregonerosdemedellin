@@ -355,11 +355,12 @@ function($, _, Backbone,
 
     buttonShare: function(e) {
         e.preventDefault();
+
         FB.ui({
           method: 'feed',
           link: 'http://www.pregonerosdemedellin.com/#'+Localization.translationLoaded,
           picture: 'http://pregonerosdemedellin.com/seo/screenshot_'+ Localization.translationLoaded +'.jpg',
-          description: Localization.STR.teaserDescriptionHeadline.toLowerCase() + Localization.STR.teaserDescriptionParagraph
+          description: Localization.STR.teaserDescriptionHeadline + " " + Localization.STR.teaserDescriptionParagraph
         }, function(response){});
     },
 
