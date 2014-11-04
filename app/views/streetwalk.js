@@ -231,7 +231,9 @@ function($, _, Backbone,
  
         //LOGGER.debug("Compute animation");
 
-        self.targetPosition  = document.documentElement.scrollTop;
+        var supportPageOffset = window.pageXOffset !== undefined;
+        var isCSS1Compat = ((document.compatMode || "") === "CSS1Compat");
+        self.targetPosition  = supportPageOffset ? window.pageYOffset : isCSS1Compat ? document.documentElement.scrollTop : document.body.scrollTop;
 
         if( Math.floor(self.targetPosition) != Math.floor(self.currentPosition) || firstStill) {
             //LOGGER.debug("Compute We have moved : scroll position " + self.currentPosition);
