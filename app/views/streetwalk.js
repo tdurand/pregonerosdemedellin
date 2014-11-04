@@ -101,7 +101,7 @@ function($, _, Backbone,
         }
 
         // Add video bonus
-        self.popcorn= Popcorn.smart( ".launching-bonusvideo", "http://player.vimeo.com/video/110573403" );
+        self.popcorn= Popcorn.smart( ".launching-bonusvideo", "http://player.vimeo.com/video/"+Localization.STR.teaserIdVimeo);
         
         self.popcorn.on("play",function() {
             //Mute sounds
