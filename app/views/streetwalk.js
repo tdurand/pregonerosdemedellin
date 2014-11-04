@@ -231,7 +231,7 @@ function($, _, Backbone,
  
         //LOGGER.debug("Compute animation");
 
-        self.targetPosition  = window.scrollY;
+        self.targetPosition  = document.documentElement.scrollTop;
 
         if( Math.floor(self.targetPosition) != Math.floor(self.currentPosition) || firstStill) {
             //LOGGER.debug("Compute We have moved : scroll position " + self.currentPosition);
