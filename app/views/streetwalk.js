@@ -357,8 +357,9 @@ function($, _, Backbone,
         e.preventDefault();
         FB.ui({
           method: 'feed',
-          name: 'Your title',
-          link: 'http://www.pregonerosdemedellin.com/#'+Localization.translationLoaded
+          link: 'http://www.pregonerosdemedellin.com/#'+Localization.translationLoaded,
+          picture: 'http://pregonerosdemedellin.com/seo/screenshot_'+ Localization.translationLoaded +'.jpg',
+          description: Localization.STR.teaserDescriptionHeadline.toLowerCase() + Localization.STR.teaserDescriptionParagraph
         }, function(response){});
     },
 
