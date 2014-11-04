@@ -30,7 +30,8 @@ function($, _, Backbone,
 
     events:{
         "click .toggle-sounds ":"toggleSounds",
-        "submit #signup-mailchimp-form":"signUpMailChimp"
+        "submit #signup-mailchimp-form":"signUpMailChimp",
+        "click .launching-button-share":"buttonShare"
     },
 
     initialize : function(params) {
@@ -350,6 +351,14 @@ function($, _, Backbone,
                }
             }
         });
+    },
+
+    buttonShare: function(e) {
+        e.preventDefault();
+        FB.ui({
+          method: 'share',
+          href: 'http://www.pregonerosdemedellin.com/#'+Localization.translationLoaded
+        }, function(response){});
     },
 
 
