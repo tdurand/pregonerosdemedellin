@@ -28,6 +28,8 @@ function($, _, Backbone,
     bodyHeight:5000,
     fullscreen:false,
 
+    scrollToEndEventSended:false,
+
     events:{
         "click .toggle-sounds ":"toggleSounds",
         "submit #signup-mailchimp-form":"signUpMailChimp",
@@ -264,9 +266,10 @@ function($, _, Backbone,
                 if(imgNb < 0) { imgNb = 0; }
                 if(imgNb >= self.way.wayStills.length) { imgNb = self.way.wayStills.length-1; }
 
-                if(imgNb == self.way.wayStills.length -1) {
+                if(imgNb == self.way.wayStills.length -1 && !self.scrollToEndEventSended) {
                     //send event to GA, scrolltoend reached
-                    ga('send', 'event', 'scrolltoend', 'yes');
+                    ga('send', 'event', 'ScrolledToTheEnd', 'yes');
+                    self.scrollToEndEventSended = true;
                 }
 
                 //Render image
@@ -348,6 +351,8 @@ function($, _, Backbone,
                     self.$el.find('.launching-signup').hide();
                     self.$el.find('.launching-signup-thanks').addClass("show");
                     LocalParams.setBonusUnlocked();
+                    //send event to GA, bonus unlocked reached
+                    ga('send', 'event', 'teaserUnlocked', 'yes');
                }
             }
         });
@@ -356,12 +361,15 @@ function($, _, Backbone,
     buttonShare: function(e) {
         e.preventDefault();
 
+        ga('send', 'event', 'ClickonShareButton', 'yes');
+
         FB.ui({
           method: 'feed',
           link: 'http://www.pregonerosdemedellin.com/#'+Localization.translationLoaded,
           picture: 'http://pregonerosdemedellin.com/seo/screenshot_'+ Localization.translationLoaded +'.jpg',
           description: Localization.STR.teaserDescriptionHeadline + " " + Localization.STR.teaserDescriptionParagraph
-        }, function(response){});
+        }, function(response){
+        });
     },
 
 
